@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.2)
 
-project(gmockc)
+project(MyGmock)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
@@ -40,7 +40,8 @@ add_executable(MyStaticMock ./test/MyStaticMock.cpp)
 
 # linking
 MESSAGE(${GTEST_BOTH_LIBRARIES})
-target_link_libraries(gmockc ${GTEST_BOTH_LIBRARIES} ${GMOCK_BOTH_LIBRARIES})
+target_link_libraries(MyCmock ${GTEST_BOTH_LIBRARIES} ${GMOCK_BOTH_LIBRARIES})
+target_link_libraries(MyStaticMock ${GTEST_BOTH_LIBRARIES} ${GMOCK_BOTH_LIBRARIES})
 
 # test
 add_test(GMock-C-Test gmockc)
