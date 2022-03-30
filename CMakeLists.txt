@@ -35,7 +35,8 @@ SET( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAG
 
 
 # exec
-add_executable(gmockc ./test/gmockc.cpp)
+add_executable(MyCmock ./test/MyCmock.cpp)
+add_executable(MyStaticMock ./test/MyStaticMock.cpp)
 
 # linking
 MESSAGE(${GTEST_BOTH_LIBRARIES})
