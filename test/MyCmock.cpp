@@ -1,4 +1,4 @@
-#include <memory> /* for gcc 4.9.2, also have to define -std=c++11 */
+#include <memory>
 
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
@@ -12,7 +12,7 @@ using namespace ::testing;
  * XDevMock
  * GMock macro to define the mock API 
  *
- * MOCK_METHOD1: the function take one parameter
+ * MOCK_METHOD: the function take one parameter
  * int (int): the return type is 'int' and the parameter is also 'int' type
  * 
  */
@@ -22,7 +22,7 @@ public:
     virtual ~XDevMock(){}
 
     /* mock api */
-    MOCK_METHOD1(xdev_get_link_status, int (int));
+    MOCK_METHOD(int, xdev_get_link_status, (int));
 };
 
 /**
@@ -97,20 +97,3 @@ TEST_F(XDevUnitTest, Port2)
     EXPECT_EQ(1, xdev_get_link_status(2));
     EXPECT_EQ(1, xdev_get_link_status(2));
 }
-
-/* 
- * If it doesn't need to do any initialization, it is not necessary to 
- * implement main 
- */
-#if 0
-int main(int argc, char **argv)
-{
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-}
-#endif
-
-
-
-
-
