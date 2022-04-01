@@ -28,17 +28,14 @@ SET( GCC_COVERAGE_COMPILE_FLAGS "-g -fprofile-arcs -ftest-coverage -Wall -Wextra
 SET( CMAKE_C_FLAGS  ${CMAKE_C_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS})
 SET( CMAKE_CXX_FLAGS  ${CMAKE_CXX_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS})
 
-
 SET(GCC_COVERAGE_LINK_FLAGS    "-pthread")
 
 SET( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}" )
-
 
 # exec
 add_executable(MyCmock ./test/MyCmock.cpp)
 add_executable(MyStaticMock ./test/MyStaticMock.cpp)
 add_executable(MyInOutParam ./test/MyInOutParam.cpp)
-
 
 # linking
 MESSAGE(${GTEST_BOTH_LIBRARIES})
