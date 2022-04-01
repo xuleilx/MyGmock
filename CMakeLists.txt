@@ -33,9 +33,9 @@ SET(GCC_COVERAGE_LINK_FLAGS    "-pthread")
 SET( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAGS}" )
 
 # exec
-add_executable(MyCmock ./test/MyCmock.cpp)
-add_executable(MyStaticMock ./test/MyStaticMock.cpp)
-add_executable(MyInOutParam ./test/MyInOutParam.cpp)
+add_executable(MyCmock ./src/MyCmock.cpp)
+add_executable(MyStaticMock ./src/MyStaticMock.cpp)
+add_executable(MyInOutParam ./src/MyInOutParam.cpp)
 
 # linking
 MESSAGE(${GTEST_BOTH_LIBRARIES})
