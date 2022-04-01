@@ -37,14 +37,19 @@ SET( CMAKE_EXE_LINKER_FLAGS  "${CMAKE_EXE_LINKER_FLAGS} ${GCC_COVERAGE_LINK_FLAG
 # exec
 add_executable(MyCmock ./test/MyCmock.cpp)
 add_executable(MyStaticMock ./test/MyStaticMock.cpp)
+add_executable(MyInOutParam ./test/MyInOutParam.cpp)
+
 
 # linking
 MESSAGE(${GTEST_BOTH_LIBRARIES})
 target_link_libraries(MyCmock ${GTEST_BOTH_LIBRARIES} ${GMOCK_BOTH_LIBRARIES})
 target_link_libraries(MyStaticMock ${GTEST_BOTH_LIBRARIES} ${GMOCK_BOTH_LIBRARIES})
+target_link_libraries(MyInOutParam ${GTEST_BOTH_LIBRARIES} ${GMOCK_BOTH_LIBRARIES})
 
 # test
-add_test(GMock-C-Test gmockc)
+add_test(GMock-C-Test MyCmock)
+add_test(GMock-Static-Test MyStaticMock)
+add_test(MyInOutParam-Test MyInOutParam)
 
 
 
